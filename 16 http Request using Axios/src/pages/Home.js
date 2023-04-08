@@ -51,7 +51,7 @@ const Home = () => {
 
    return (
       <>
-      <button onClick={fetchData}>Click here to load data From Server </button>
+      <button className="btn btn-danger" onClick={fetchData}>Click here to load data From Server </button>
       <div className='margin10'>{!flag && <div>.. Loading From Server using Axios Method </div>} 
         {flag===true &&  <ol><i>Below Info is fetched from Server using Axios Method </i> {posts.map(displayData)}</ol>}
       </div>

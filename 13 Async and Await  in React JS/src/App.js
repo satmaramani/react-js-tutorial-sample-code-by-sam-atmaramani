@@ -5,15 +5,23 @@ import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import NoPage from "./pages/NoPage";
+import Header from "./Header";
 
+import {
+  Container
+} from 'reactstrap';
 
 export default function App() {
 
   
 
    return (
+    <><Container>
     <BrowserRouter>
-      <h1>Powered by <font color='red'>TechySam</font></h1>
+    <Header /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <h1> Use of Async and Await in React JS </h1>
+
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -24,6 +32,7 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </Container></>
   );
 }
 

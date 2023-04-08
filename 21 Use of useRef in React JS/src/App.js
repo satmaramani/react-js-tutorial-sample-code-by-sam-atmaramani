@@ -1,5 +1,10 @@
 import { useRef } from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./Header";
+
+import {
+  Container
+} from 'reactstrap';
 
 function App() {
   const inputElement = useRef();
@@ -18,15 +23,16 @@ function App() {
   };
 
   return (
-    <>
-      <h1>Powered by <font color='red'>TechySam</font></h1>
-      <h1>Use of useRef to handle the element focus </h1>
-      <input type="text" ref={inputElement} />
-      <button onClick={focusInput}>Focus Input 1</button> <br /> 
+    <><Container>
+        <Header /><br /><br /><br /><br /><br /><br /><br /><br />
 
-      <input type="text" ref={inputElement2} />
-      <button onClick={focusInput2}>Focus Input 2</button>
-    </>
+        <h1>Use of useRef to handle the element focus </h1>
+        <input type="text" ref={inputElement} value="initial value 1" />
+        <button className="btn btn-danger" onClick={focusInput}>Focus Input 1</button> <br /> 
+
+        <input type="text" ref={inputElement2}  value="initial value 2"  />
+        <button className="btn btn-primary" onClick={focusInput2}>Focus Input 2</button>
+      </Container></>
   );
 }
 

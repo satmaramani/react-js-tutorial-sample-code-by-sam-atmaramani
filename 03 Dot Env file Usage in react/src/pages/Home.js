@@ -15,7 +15,7 @@ const Home = ()=>{
         alert("This is reading from environment value " + process.env.REACT_APP_BASE_URL) 
       }, [dummy]);
 
-    return <><button onClick={btnClickHandler}>Click to see useEffect Function flow </button><br />
+    return <><button className="btn btn-danger" onClick={btnClickHandler}>Click to see useEffect Function flow </button><br />
     <div className="App-header">This is Home page </div>
     </>
 }

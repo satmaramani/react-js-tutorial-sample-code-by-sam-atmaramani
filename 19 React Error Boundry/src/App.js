@@ -3,12 +3,23 @@
 //YouTube Videos :- https://www.youtube.com/@techysam-bl9mk/videos
 import ErrorBoundary from "./ErrorBoundary";
 import BuggyCounter from "./BuggyCounter";
+
+import Header from "./Header";
+
+import {
+  Container
+} from 'reactstrap';
 // import ReactDOM from "react-dom/client";
 
 function App() {
   return (
+    <><Container>
     <div>
-      <h1>Powered by <font color='red'>TechySam</font></h1>
+    <Header /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+    <h1> React Error Boundary Demo </h1>
+
       <p>
         <b>
           This is an example of error boundaries in React 16.
@@ -29,6 +40,7 @@ function App() {
       <ErrorBoundary><BuggyCounter /></ErrorBoundary>
       <ErrorBoundary><BuggyCounter /></ErrorBoundary>
     </div>
+    </Container></>
   );
 }
 

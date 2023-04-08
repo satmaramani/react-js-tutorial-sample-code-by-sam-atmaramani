@@ -5,7 +5,7 @@
 
 const Defaultcomponent = (props) => {
     return <>
-        Proof : This message is coming from Defaultcomponent Component <br />
+        Proof : This message is coming from <b>Defaultcomponent</b> Component <br />
 
     </>
 }

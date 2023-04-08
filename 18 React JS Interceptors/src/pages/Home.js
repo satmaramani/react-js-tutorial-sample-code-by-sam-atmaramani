@@ -6,6 +6,38 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 
 const Home = () => {
+
+   axios.interceptors.request.use(
+      config => {
+        const token = "TechySam"
+        if (token) {
+          config.headers['Authorization'] = 'Bearer ' + token
+        }
+        console.log(" I am inside interceptor code : Sending Bearer Token with all the requests ")
+        // config.headers['Content-Type'] = 'application/json';
+        return config
+      },
+      error => {
+        Promise.reject(error)
+      }
+    )
+
+
+
+    //below is response interceptor example 
+
+    axios.interceptors.response.use(
+      response => {
+
+         console.log("This is TechySam Response")
+         console.log(response);
+        return response
+      },
+      function (error) {
+        console.log(error)
+      }
+    )
+
    const [posts, setPosts] = useState([]);
    const [flag, setFlag] = useState(false);
 
@@ -55,7 +87,7 @@ const Home = () => {
    return (
       <Container className="bg-primary text-white mb-3">
          
-         <Row><Button className="bg-warning col-sm-4 offset-4" onClick={fetchData}>Click here to load data From Server </Button></Row>
+         <Row><Button className="btn btn-danger bg-warning col-sm-4 offset-4" onClick={fetchData}>Click here to load data From Server </Button></Row>
          <div className='margin10'>{!flag && <div>.. Loading From Server using Axios Method </div>} 
          {flag===true &&  <ol><i>Below Info is fetched from Server using Axios Method </i> {posts.map(displayData)}</ol>}
          </div>

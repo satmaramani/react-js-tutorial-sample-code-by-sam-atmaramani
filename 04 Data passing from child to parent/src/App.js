@@ -4,13 +4,24 @@
 
 import './App.css';//import css and use it
 import Parent from "./components/Parent"; //import the parent component - This is Default component
+import Header from './Header';
+import {
+  Container
+} from 'reactstrap';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Powered by <font color='red'>TechySam</font></h1>
-      <Parent />
-    </div>
+    <>
+      <Container >
+        <div className="App">
+          <Header /><br /> <br /> <br /> <br /> <br /> <br /> 
+
+          <h1>Data passing from Child component to parent </h1>
+
+          <Parent />
+        </div>
+      </Container>
+    </>
   );
 }
 

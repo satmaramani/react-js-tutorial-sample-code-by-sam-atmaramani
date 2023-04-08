@@ -6,6 +6,7 @@ import reducer from '../src/reducer/index'
 import App from '../src/App'
 import './index.css';
 import { createRoot } from "react-dom/client";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(
    reducer,

@@ -15,6 +15,8 @@ const Parent = () => {
     }
 
     return <>
+
+        <br /><br /><h1>This is a parent component </h1>
         Proof : Below title will change after clicking on Below button  <br /> <br /> <br />
 
         Title supplied from Child :<b>{title}</b> <br /> <br /> <br />

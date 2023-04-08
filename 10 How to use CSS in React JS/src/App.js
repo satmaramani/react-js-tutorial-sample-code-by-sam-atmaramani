@@ -7,7 +7,7 @@ import Parent from "./components/Parent"; //import the parent component - This i
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{color:"red"}}>
       <h1>Powered by <font color='red'>TechySam</font></h1>
       <Parent />
     </div>

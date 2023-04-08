@@ -1,16 +1,23 @@
 import { AxiosInterceptor } from './axios'
 import Home from "./pages/Home";
+import Header from "./Header";
+
+import {
+  Container
+} from 'reactstrap';
 
 function App() {
   return (
-    <>
-    <h1>Powered by <font color='red'>TechySam</font></h1>
+    <><Container>
+    <Header /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <h1> React JS Interceptors </h1>
     
     <AxiosInterceptor>
     <Home />
 
     </AxiosInterceptor>
-    </>
+    </Container></>
   );
 }
 

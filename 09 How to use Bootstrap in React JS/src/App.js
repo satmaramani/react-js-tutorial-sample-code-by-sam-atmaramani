@@ -2,6 +2,10 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import React , {useState} from "react";
+import Header from "./Header";
+import {
+  Container
+} from 'reactstrap';
 
 function FormDisabledInputExample() {
 
@@ -27,29 +31,39 @@ const textHandler = (event)=>{
   setDummyText(event.target.value)
 }
 
+const resetHandler = ()=>{
+  
+  setDummyText('');
+  setDummydropdown('');
+}
+
   return (
     <>
-      <h1>Powered by <font color='red'>TechySam</font></h1>
-      <form onSubmit={submitHandler}>
-      <Form.Group className="mb-3">
-        <Form.Label>input</Form.Label>
-        <Form.Control placeholder="input" type='text' onChange={textHandler}/>
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Label> select menu</Form.Label>
-        <Form.Select onChange={selectHandler}>
-          <option> select</option>
-          <option> 1</option>
-          <option> 2</option>
-          <option> 3</option>
-        </Form.Select>
-      </Form.Group>
-      <Form.Group className="mb-3">
-        <Form.Check type="checkbox" label="Can't check this"  />
-      </Form.Group>
-      <Button className="btn btn-secondary" onClick={submitHandler}>Submit button</Button>
-      </form>
-    </>
+      <Container>
+      <Header /><br /><br /><br /><br /><br /><br /><br /><br />
+      <h1> How to use Bootstrap in React JS</h1>
+        <form onSubmit={submitHandler}>
+        <Form.Group className="mb-3">
+          <Form.Label>input</Form.Label>
+          <Form.Control placeholder="input" type='text' onChange={textHandler} value={dummytext}/>
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label> select menu</Form.Label>
+          <Form.Select onChange={selectHandler}  >
+            <option value={dummydown}> select</option>
+            <option> 1</option>
+            <option> 2</option>
+            <option> 3</option>
+          </Form.Select>
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Check type="checkbox" label="Can't check this"  />
+        </Form.Group>
+        <Button className="btn btn-danger" onClick={submitHandler}>Submit button</Button>
+        <Button className="btn btn-secondary" onClick={resetHandler}>Reset Values</Button>
+        </form>
+      </Container>
+      </>
   );
 }
 

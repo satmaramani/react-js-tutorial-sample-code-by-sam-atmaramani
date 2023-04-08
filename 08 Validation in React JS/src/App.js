@@ -1,6 +1,10 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import React , {useState} from "react";
+import Header from "./Header";
+import {
+  Container
+} from 'reactstrap';
 
 function ValidationExample() {
 
@@ -15,14 +19,14 @@ const submitHandler= (event)=>
       alert("Please enter some value ");
       return;
      }else{
-      alert(" Your entered some value : Thank you ");
+      alert(" Your entered " +dummytext +" : Thank you ");
      }
 
     if(dummydown.length===0 || dummydown === "" || isNaN(dummydown)){
-      alert(dummydown + " is not a number <br/>");
+      alert(dummydown + " Dropdown value is not a number <br/>");
       return;
      }else{
-      alert(dummydown + " is a number <br/>");
+      alert(dummydown + " Dropdown value is a number <br/>");
      }
 
      alert("This form is validated properly ")
@@ -43,7 +47,9 @@ const textHandler = (event)=>{
 
   return (
     <>
-      <h1>Powered by <font color='red'>TechySam</font></h1>
+    <Container>
+      <Header /><br /><br /><br /><br /><br /><br />
+      <h1>React Validation</h1>
       <form onSubmit={submitHandler}>
       <Form.Group className="mb-3">
         <Form.Label>input</Form.Label>
@@ -61,6 +67,7 @@ const textHandler = (event)=>{
       
       <Button className="btn btn-secondary" onClick={submitHandler}>Submit button</Button>
       </form>
+      </Container>
     </>
   );
 }

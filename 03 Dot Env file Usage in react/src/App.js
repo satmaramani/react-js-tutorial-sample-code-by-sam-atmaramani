@@ -1,30 +1,34 @@
-import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
-import Blogs from "./pages/Blogs";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
 import NoPage from "./pages/NoPage";
-
+import Header from "./Header";
+import {
+  Container
+} from 'reactstrap';
 
 export default function App() {
 
   
 
    return (
+    <>
+    <Container >
+    <Header title="Usage of Dot env (.env) file" /><br /><br /><br /><br /><br /><br /><br /><br />
+    <h1>Usage of Dot env (.env) file </h1>
+
+    This value is coming from <b>.env.local</b> file <br /> Key = <b> REACT_APP_BASE_URL</b> <br /> Value <b>{process.env.REACT_APP_BASE_URL}</b>
     <BrowserRouter>
-      <h1>Powered by <font color='red'>TechySam</font></h1>
+      
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="about" element={<About />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
+    </Container>
+    </>
   );
 }
 

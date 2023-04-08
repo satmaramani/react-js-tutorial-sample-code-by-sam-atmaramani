@@ -3,14 +3,28 @@
 //YouTube Videos :- https://www.youtube.com/@techysam-bl9mk/videos
 
 import './App.css';
-import Parent from "./components/Parent"; //import the parent component - This is Default component
+import StateDemo from "./components/Parent"; //import the parent component - This is Default component
+import Header from './Header';
+
+import {
+  Container
+} from 'reactstrap';
 
 function App() {
   return (
+    <>
+    
+    <Container>
+      
     <div className="App">
-      <h1>Powered by <font color='red'>TechySam</font></h1>
-      <Parent />
+    
+      <Header /> <br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+      <h1>Handle State using useState</h1>
+      <StateDemo />
+      
     </div>
+    </Container></>
   );
 }
 

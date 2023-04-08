@@ -5,12 +5,25 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import React , {useState} from "react";
+import Header from "./Header";
+
+import {
+  Container
+} from 'reactstrap';
+
+
 
 function FormDisabledInputExample() {
 
+
+
+
+  
   return (
-    <>
-      <h1>Powered by <font color='red'>TechySam</font></h1>
+    <><Container>
+      <Header /><br /><br /><br /><br /><br /><br />
+
+      <h1> How to use Forms in React JS </h1>
       <form>
       <Form.Group className="mb-3">
         <Form.Label>input</Form.Label>
@@ -30,7 +43,7 @@ function FormDisabledInputExample() {
       </Form.Group>
       <Button className="btn btn-secondary" >Submit button</Button>
       </form>
-    </>
+      </Container></>
   );
 }
 
